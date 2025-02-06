@@ -113,7 +113,7 @@ const biomesData = [
                 name: "Mesprit",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/mesprit.png",
                 time: "Dawn, Morning",
-                condition: "Superficie acuática"
+                condition: "Superficie acuática."
             },
             {
                 name: "Zacian",
@@ -167,7 +167,7 @@ const biomesData = [
                 name: "Uxie",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/uxie.png",
                 time: "Afternoon",
-                condition: "Superficie acuática"
+                condition: "Superficie acuática."
             },
             {
                 name: "Xerneas",
@@ -197,7 +197,7 @@ const biomesData = [
                 name: "Uxie",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/uxie.png",
                 time: "Afternoon",
-                condition: "Superficie acuática"
+                condition: "Superficie acuática."
             },
             {
                 name: "Darkrai",
