@@ -203,7 +203,7 @@ const biomesData = [
                 name: "Darkrai",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/darkrai.png",
                 time: "Night",
-                condition: "En <a href='https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/a/ab/Calendario.png/revision/latest/scale-to-width-down/1000?cb=20160202184511' target='_blank' class='text-blue-400 hover:underline'>luna nueva</a>"
+                condition: "En <a href='https://media.discordapp.net/attachments/1117613048581062778/1336895109274275860/Calendario.png?ex=67a57818&is=67a42698&hm=4e1d72158376778d699f0cb7ca76e20e8fa325ec09d26ba95de919ad4c12bffc&=&format=webp&quality=lossless&width=800&height=320' target='_blank' class='text-blue-400 hover:underline'>luna nueva</a>"
             },
             {
                 name: "Magearna",
@@ -1327,7 +1327,7 @@ const biomesData = [
                 name: "Cresselia",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/cresselia.png",
                 time: "Night",
-                condition: "En <a href='https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/a/ab/Calendario.png/revision/latest/scale-to-width-down/1000?cb=20160202184511' target='_blank' class='text-blue-400 hover:underline'>luna llena</a>"
+                condition: "En <a href='https://media.discordapp.net/attachments/1117613048581062778/1336895109274275860/Calendario.png?ex=67a57818&is=67a42698&hm=4e1d72158376778d699f0cb7ca76e20e8fa325ec09d26ba95de919ad4c12bffc&=&format=webp&quality=lossless&width=800&height=320' target='_blank' class='text-blue-400 hover:underline'>luna llena</a>"
             },
         ]
     },
