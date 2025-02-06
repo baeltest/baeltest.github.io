@@ -1321,7 +1321,7 @@ const biomesData = [
                 name: "Mesprit",
                 sprite: "https://img.pokemondb.net/sprites/home/normal/mesprit.png",
                 time: "Dawn, Morning",
-                condition: "Superficie acuática"
+                condition: "Superficie acuática."
             },
             {
                 name: "Cresselia",
