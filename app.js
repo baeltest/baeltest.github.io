@@ -1,15 +1,15 @@
-// Cargar biomas iniciales
+
 function loadBiomes() {
     const container = document.getElementById('biomesList');
     container.innerHTML = biomesData.map(biome => `
-        <div class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition cursor-pointer" 
-             onclick="showBiomeDetails(${biome.id})">
+        <a href="#${biome.name.toLowerCase().replace(/\s+/g, '-')}" 
+           class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition cursor-pointer">
             <span class="text-xl">${biome.name}</span>
-        </div>
+        </a>
     `).join('');
 }
 
-// Buscador en tiempo real
+
 document.getElementById('searchInput').addEventListener('input', function(e) {
     const searchTerm = e.target.value.toLowerCase();
     const filtered = biomesData.filter(biome => 
@@ -17,19 +17,21 @@ document.getElementById('searchInput').addEventListener('input', function(e) {
     );
     
     document.getElementById('biomesList').innerHTML = filtered.map(biome => `
-        <div class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition cursor-pointer" 
-             onclick="showBiomeDetails(${biome.id})">
+        <a href="#${biome.name.toLowerCase().replace(/\s+/g, '-')}" 
+           class="p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition cursor-pointer">
             <span class="text-xl">${biome.name}</span>
-        </div>
+        </a>
     `).join('');
 });
 
-// Mostrar detalles del bioma
+
 function showBiomeDetails(biomeId) {
     const biome = biomesData.find(b => b.id === biomeId);
+    if (!biome) return;
+
     document.getElementById('biomeTitle').textContent = biome.name;
     
-    // Llenar tabla de Pokémon
+    
     const tableBody = document.getElementById('pokemonTable');
     tableBody.innerHTML = biome.pokemons.map(pokemon => `
         <tr class="border-b border-gray-700">
@@ -38,20 +40,40 @@ function showBiomeDetails(biomeId) {
                 ${pokemon.name}
             </td>
             <td class="px-6 py-4">${pokemon.time}</td>
-            <td class="px-6 py-4">${pokemon.condition}</td>
+            <td class="px-6 py-4" innerHTML="${pokemon.condition}"></td>
         </tr>
     `).join('');
 
-    // Mostrar sección de detalles
+ 
     document.getElementById('biomesList').classList.add('hidden');
     document.getElementById('biomeDetails').classList.remove('hidden');
 }
 
-// Volver a la lista
+
 function hideDetails() {
     document.getElementById('biomesList').classList.remove('hidden');
     document.getElementById('biomeDetails').classList.add('hidden');
+    window.location.hash = ''; 
 }
 
-// Inicializar
-window.onload = loadBiomes;
+
+function loadBiomeFromHash() {
+    const hash = window.location.hash.substring(1); 
+    if (!hash) return;
+
+ 
+    const biomeName = hash.replace(/-/g, ' ');
+    const biome = biomesData.find(b => b.name.toLowerCase() === biomeName);
+    if (biome) {
+        showBiomeDetails(biome.id);
+    }
+}
+
+
+window.onload = () => {
+    loadBiomes();
+    loadBiomeFromHash(); 
+};
+
+
+window.addEventListener('hashchange', loadBiomeFromHash);
