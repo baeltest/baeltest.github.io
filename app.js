@@ -1,4 +1,3 @@
-
 function loadBiomes() {
     const container = document.getElementById('biomesList');
     container.innerHTML = biomesData.map(biome => `
@@ -31,7 +30,6 @@ function showBiomeDetails(biomeId) {
 
     document.getElementById('biomeTitle').textContent = biome.name;
     
-    
     const tableBody = document.getElementById('pokemonTable');
     tableBody.innerHTML = biome.pokemons.map(pokemon => `
         <tr class="border-b border-gray-700">
@@ -40,11 +38,10 @@ function showBiomeDetails(biomeId) {
                 ${pokemon.name}
             </td>
             <td class="px-6 py-4">${pokemon.time}</td>
-            <td class="px-6 py-4" innerHTML="${pokemon.condition}"></td>
+            <td class="px-6 py-4">${pokemon.condition}</td> <!-- Cambio aquí -->
         </tr>
     `).join('');
 
- 
     document.getElementById('biomesList').classList.add('hidden');
     document.getElementById('biomeDetails').classList.remove('hidden');
 }
@@ -61,7 +58,6 @@ function loadBiomeFromHash() {
     const hash = window.location.hash.substring(1); 
     if (!hash) return;
 
- 
     const biomeName = hash.replace(/-/g, ' ');
     const biome = biomesData.find(b => b.name.toLowerCase() === biomeName);
     if (biome) {
